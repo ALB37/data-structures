@@ -3,14 +3,8 @@
 #ifndef LINKED_LIST_HPP
 #define LINKED_LIST_HPP
 
-class Node
+struct Node
 {
-    public:
-        Node(const int);
-        const int* getData() const;
-        void setData(const int);
-        ~Node(void);
-
     private:
         Node* next;
         int data;
