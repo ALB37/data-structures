@@ -29,3 +29,7 @@ int Queue::dequeue() {
         }
     }
 }
+
+int Queue::peek() {
+    return LinkedList::peek();
+}

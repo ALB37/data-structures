@@ -9,7 +9,7 @@ class Queue : protected LinkedList {
   public:
     void enqueue(int);
     int dequeue(void);
-  
+    int peek(void);
 };
 
 #endif
