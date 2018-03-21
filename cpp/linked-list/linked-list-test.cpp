@@ -111,5 +111,7 @@ int main() {
 
     list->print();
 
+    list->~LinkedList();
+    
     return 0;
 }
