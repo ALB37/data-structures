@@ -21,7 +21,7 @@ class LinkedList {
         int getLength(void);
         void print(void);
 
-    private:
+    protected:
         Node *head, *tail;
         int length;
 };
