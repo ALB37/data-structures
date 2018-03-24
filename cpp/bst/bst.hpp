@@ -15,6 +15,7 @@ class BST {
         ~BST(void);
         void addNode(int);
         int removeNode(int);
+        int removeRootNode(void);
         int peek(void);
         bool isEmpty(void);
         bool has(int);

@@ -1,9 +1,8 @@
 // queue.hpp
-
-#include "../linked-list/linked-list.hpp"
-
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
+
+#include "../linked-list/linked-list.hpp"
 
 class Queue : protected LinkedList {
   public:

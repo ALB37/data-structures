@@ -10,16 +10,16 @@ struct Node {
 
 class LinkedList {
     public:
-        LinkedList(void);
-        ~LinkedList(void);
-        void prependNode(int);
-        void appendNode(int);
-        int removeNode(int);
-        int peek(void);
-        bool isEmpty(void);
-        bool has(int);
-        int getLength(void);
-        void print(void);
+        LinkedList();
+        ~LinkedList();
+        void prependNode(int value);
+        void appendNode(int value);
+        int removeNode(int value);
+        int peek();
+        bool isEmpty();
+        bool has(int value);
+        int getLength();
+        void print();
 
     protected:
         Node *head, *tail;

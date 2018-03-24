@@ -6,6 +6,7 @@
 using namespace std;
 
 int main() {
+    /*
     Queue *queue = new Queue;
 
     if (queue->peek() == -1 ) {
@@ -34,6 +35,11 @@ int main() {
     }
 
     queue->~Queue();
+*/
+
+    Queue foobar{};
+
+    foobar.peek();
 
     return 0;
 }

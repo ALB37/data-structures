@@ -5,70 +5,70 @@
 
 using namespace std;
 
-LinkedList::LinkedList(void) {
-    head = NULL;
-    tail = NULL;
+LinkedList::LinkedList() {
+    head = nullptr;
+    tail = nullptr;
     length = 0;
 }
-LinkedList::~LinkedList(void){
+LinkedList::~LinkedList(){
     Node *temp = head;
-    while(temp != NULL) {
+    while(temp != nullptr) {
         Node *next = temp->next;
         delete temp;
         temp = next;
         length--;
     }
-    head = NULL;
-    tail = NULL;
+    head = nullptr;
+    tail = nullptr;
 }
 void LinkedList::prependNode(int value) {
     Node *temp = new Node;
     temp->data = value;
-    temp->next = NULL;
-    if (head != NULL) {
+    temp->next = nullptr;
+    if (head != nullptr) {
         temp->next = head;
     } else {
         tail = temp;
     }
     head = temp;
-    temp = NULL;
+    temp = nullptr;
     length++;
 }
 void LinkedList::appendNode(int value) {
     Node *temp = new Node;
     temp->data = value;
-    temp->next = NULL;
-    if (tail != NULL) {
+    temp->next = nullptr;
+    if (tail != nullptr) {
         tail->next = temp;
     } else {
         head = temp;
     }
     tail = temp;
-    temp = NULL;
+    temp = nullptr;
     length++;
 }
 int LinkedList::removeNode(int value) {
-    if (head == NULL) {
+    if (head == nullptr) {
         return -1;
     }
     if (head->data == value) {
         if (head == tail) {
             delete tail;
-            tail = NULL;
-            head = NULL;
+            tail = nullptr;
+            head = nullptr;
             length--;
             return 0;
         } else {
             Node *temp = head->next;
             delete head;
             head = temp;
-            temp = NULL;
+            temp = nullptr;
             length--;
             return 0;
         }
     } else {
         Node *temp = head;
-        while(temp != NULL) {
+        while(temp != nullptr) {
             Node *next = temp->next;
             if (next->data == value) {
                 if (temp->next == tail) {
@@ -76,7 +76,7 @@ int LinkedList::removeNode(int value) {
                 }
                 temp->next = next->next;
                 delete next;
-                next = NULL;
+                next = nullptr;
                 length--;
                 return 0;
             }
@@ -85,15 +85,15 @@ int LinkedList::removeNode(int value) {
     }
     return -1;
 }
-int LinkedList::peek(void){
-    if (head == NULL) {
+int LinkedList::peek(){
+    if (head == nullptr) {
         return -1;
     } else {
         return head->data;
     }
 }
-bool LinkedList::isEmpty(void){
-    if (head == NULL) {
+bool LinkedList::isEmpty(){
+    if (head == nullptr) {
         return true;
     } else {
         return false;
@@ -101,7 +101,7 @@ bool LinkedList::isEmpty(void){
 }
 bool LinkedList::has(int value){
     Node *temp = head;
-        while (temp != NULL) {
+        while (temp != nullptr) {
             if (temp->data == value) {
                 return true;
             }
@@ -109,12 +109,12 @@ bool LinkedList::has(int value){
         }
     return false;
 }
-int LinkedList::getLength(void) {
+int LinkedList::getLength() {
     return length;
 }
-void LinkedList::print(void){
+void LinkedList::print(){
     Node *temp = head;
-        while (temp != NULL) {
+        while (temp != nullptr) {
             cout << temp->data << endl;
             temp = temp->next;
         }
