@@ -1,7 +1,6 @@
 // bst.hpp
 
-#ifndef BST_HPP
-#define BST_HPP
+#pragma once
 
 struct Node {
     int data;
@@ -11,20 +10,18 @@ struct Node {
 
 class BST {
     public:
-        BST(void);
-        ~BST(void);
-        void addNode(int);
-        int removeNode(int);
-        int removeRootNode(void);
-        int peek(void);
-        bool isEmpty(void);
-        bool has(int);
-        void preOrderPrint(void);
-        void inOrderPrint(void);
-        void postOrderPrint(void);
+        BST();
+        ~BST();
+        void addNode(int value);
+        int removeNode(int value);
+        int removeRootNode();
+        int peek();
+        bool isEmpty();
+        bool has(int value);
+        void preOrderPrint();
+        void inOrderPrint();
+        void postOrderPrint();
 
     protected:
         Node *root;
 };
-
-#endif

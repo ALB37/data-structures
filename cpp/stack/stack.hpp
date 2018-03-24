@@ -1,7 +1,6 @@
 // stack.hpp
 
-#ifndef STACK_HPP
-#define STACK_HPP
+#pragma once
 
 #include "../linked-list/linked-list.hpp"
 
@@ -11,5 +10,3 @@ class Stack : protected LinkedList {
     int pop(void);
     int peek(void);
 };
-
-#endif

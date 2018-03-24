@@ -1,6 +1,6 @@
 // queue.hpp
-#ifndef QUEUE_HPP
-#define QUEUE_HPP
+
+#pragma once
 
 #include "../linked-list/linked-list.hpp"
 
@@ -10,5 +10,3 @@ class Queue : protected LinkedList {
     int dequeue(void);
     int peek(void);
 };
-
-#endif

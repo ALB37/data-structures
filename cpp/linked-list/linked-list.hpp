@@ -1,7 +1,6 @@
 // linked-list.hpp
 
-#ifndef LINKED_LIST_HPP
-#define LINKED_LIST_HPP
+#pragma once
 
 struct Node {
     int data;
@@ -25,5 +24,3 @@ class LinkedList {
         Node *head, *tail;
         int length;
 };
-
-#endif

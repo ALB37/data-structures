@@ -1,7 +1,6 @@
 // queue.cpp
 
 #include "queue.hpp"
-#include "../linked-list/linked-list.hpp"
 
 void Queue::enqueue(int value) {
     appendNode(value);
