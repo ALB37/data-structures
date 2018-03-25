@@ -3,16 +3,16 @@
 #pragma once
 
 struct Node {
-    int data;
-    Node *left;
-    Node *right;
+    int data = 0;
+    Node *left = nullptr;
+    Node *right = nullptr;
 };
 
 class BST {
     public:
         BST();
         ~BST();
-        void addNode(int value);
+        int addNode(int value);
         int removeNode(int value);
         int removeRootNode();
         int peek();
