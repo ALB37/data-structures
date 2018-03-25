@@ -78,3 +78,42 @@ bool BST::has(int value) {
         }
     }
 }
+
+void BST::preOrderPrint() {
+    BST::preOrderHelper(root);
+}
+
+void BST::preOrderHelper(Node *subRoot) {
+    if (subRoot == nullptr) {
+        return;
+    }
+    cout << subRoot->data << ", ";
+    BST::preOrderHelper(subRoot->left);
+    BST::preOrderHelper(subRoot->right);
+}
+
+void BST::inOrderPrint() {
+    BST::inOrderHelper(root);
+}
+
+void BST::inOrderHelper(Node *subRoot) {
+    if (subRoot == nullptr) {
+        return;
+    }
+    BST::inOrderHelper(subRoot->left);
+    cout << subRoot->data << ", ";
+    BST::inOrderHelper(subRoot->right);
+}
+
+void BST::postOrderPrint() {
+    BST::postOrderHelper(root);
+}
+
+void BST::postOrderHelper(Node *subRoot) {
+    if (subRoot == nullptr) {
+        return;
+    }
+    BST::postOrderHelper(subRoot->left);
+    BST::postOrderHelper(subRoot->right);
+    cout << subRoot->data << ", ";
+}
