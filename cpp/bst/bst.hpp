@@ -23,5 +23,8 @@ class BST {
         void postOrderPrint();
 
     protected:
+        void preOrderHelper(Node *subRoot);
+        void inOrderHelper(Node *subRoot);
+        void postOrderHelper(Node *subRoot);
         Node *root;
 };
