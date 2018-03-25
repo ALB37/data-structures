@@ -1,21 +1,20 @@
 // stack.cpp
 
 #include "stack.hpp"
-#include "../linked-list/linked-list.cpp"
 
 void Stack::push(int value) {
     prependNode(value);
 }
 
 int Stack::pop() {
-    if (head == NULL) {
+    if (head == nullptr) {
         return -1;
     } else {
         if (head == tail) {
             int n = tail->data;
             delete tail;
-            tail = NULL;
-            head = NULL;
+            tail = nullptr;
+            head = nullptr;
             length--;
             return n;
         } else {
@@ -23,7 +22,7 @@ int Stack::pop() {
             int n = head->data;
             delete head;
             head = temp;
-            temp = NULL;
+            temp = nullptr;
             length--;
             return n;
         }

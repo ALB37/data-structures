@@ -55,6 +55,8 @@ Mkfile.old
 dkms.conf
 
 ### C++ ###
+build/
+
 # Prerequisites
 
 # Compiled Object files
@@ -175,3 +177,5 @@ typings/
 db
 
 # End of https://www.gitignore.io/api/node,macos
+
+generic-linked-list

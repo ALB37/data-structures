@@ -1,0 +1,1 @@
+executable('linked_list_test', ['linked-list.cpp', 'linked-list-test.cpp'])

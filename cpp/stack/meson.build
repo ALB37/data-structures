@@ -1,0 +1,1 @@
+executable('stack_test', ['../linked-list/linked-list.cpp', 'stack.cpp', 'stack-test.cpp'])

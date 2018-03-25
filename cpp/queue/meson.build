@@ -1,0 +1,1 @@
+executable('queue_test', ['../linked-list/linked-list.cpp', 'queue.cpp', 'queue-test.cpp'])
