@@ -81,6 +81,7 @@ bool BST::has(int value) {
 
 void BST::preOrderPrint() {
     BST::preOrderHelper(root);
+    cout << endl;
 }
 
 void BST::preOrderHelper(Node *subRoot) {
@@ -94,6 +95,7 @@ void BST::preOrderHelper(Node *subRoot) {
 
 void BST::inOrderPrint() {
     BST::inOrderHelper(root);
+    cout << endl;
 }
 
 void BST::inOrderHelper(Node *subRoot) {
@@ -107,6 +109,7 @@ void BST::inOrderHelper(Node *subRoot) {
 
 void BST::postOrderPrint() {
     BST::postOrderHelper(root);
+    cout << endl;
 }
 
 void BST::postOrderHelper(Node *subRoot) {
