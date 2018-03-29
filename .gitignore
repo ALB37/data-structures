@@ -179,3 +179,6 @@ db
 # End of https://www.gitignore.io/api/node,macos
 
 generic-linked-list
+
+__pycache__
+.cache
