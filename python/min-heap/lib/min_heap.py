@@ -1,6 +1,8 @@
 class MinHeap:
-    def __init__(self):
+    def __init__(self, data=[]):
         self._data = []
+        for num in data:
+            self.insert(num)
 
     def peek(self):
         if not self._data:
@@ -10,7 +12,7 @@ class MinHeap:
     
     def insert(self, value):
         if type(value) not in [int, float]:
-            raise TypeError("Min Heap can only take numbers as values")
+            raise TypeError("MinHeap can only take numbers as values")
 
         self._data.append(value)
         self._bubbleUp(len(self._data) - 1)
@@ -37,7 +39,7 @@ class MinHeap:
 
     def extractMin(self):
         if not self._data:
-            return
+            raise IndexError("MinHeap is empty")
 
         min_val = self._data[0]
         last_val = self._data.pop()
