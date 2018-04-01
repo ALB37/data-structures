@@ -3,7 +3,8 @@ class Graph:
         self._adjacencies = {}
 
     def addNode(self, coordinates):
-        # coordinates will be a tuple of the form (x, y)
+        # coordinates can be any immutable data type,
+        # potentially a tuple of the form (x, y), for instance
         self._adjacencies[coordinates] = []
 
     def addEdge(self, startCoordinates, endCoordinates, weight=0):
@@ -22,5 +23,6 @@ class Graph:
         if coordinates not in self._adjacencies:
             raise ValueError('coordinates not in graph')
 
-        return self._adjacencies[coordinates][:]
+        return [dict(self._adjacencies[coordinates][i]) \
+            for i in self._adjacencies[coordinates]]
 
