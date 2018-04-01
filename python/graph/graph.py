@@ -11,15 +11,15 @@ class Graph:
         self._adjacencies[coordinates] = []
 
     def addEdge(self, startCoordinates, endCoordinates, weight=0):
-        if startCoordinates not in self._adjacencies \
-                or endCoordinates not in self._adjacencies:
+        if (startCoordinates not in self._adjacencies
+                or endCoordinates not in self._adjacencies):
             raise ValueError('start or end coordinates do not exist')
 
         adjacentList = self._adjacencies[startCoordinates]
 
         adjacentList.append({
             'node' : endCoordinates,
-            'weight' : weight
+            'weight' : weight,
         })
 
     def getNeighbors(self, coordinates):
@@ -94,7 +94,7 @@ class Graph:
 
         shortestPath[startCoordinates] = 0
 
-        while pQueue.full():
+        while not pQueue.empty():
             currentNode = pQueue.get()[1]
 
             if currentNode in visitedNodes:
@@ -116,12 +116,14 @@ class Graph:
 
                 newPathWeight = shortestPath[currentNode] + weight
 
-                if node not in shortestPath \
-                    or newPathWeight < shortestPath[node]:
+                if (node not in shortestPath
+                        or newPathWeight < shortestPath[node]):
                     shortestPath[node] = newPathWeight
                     parentMap[node] = currentNode
 
                     pQueue.put((shortestPath[node], node))
 
-        return None
+        return 'None'
 
+
+    # def aStarSearch(self, startCoordinates, endCoordinates):
