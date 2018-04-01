@@ -121,8 +121,7 @@ class Graph:
                     shortestPath[node] = newPathWeight
                     parentMap[node] = currentNode
 
-                    pQueue.set((shortestPath[node], node))
+                    pQueue.put((shortestPath[node], node))
 
         return None
 
-        
