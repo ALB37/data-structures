@@ -23,6 +23,7 @@ class Graph:
         if coordinates not in self._adjacencies:
             raise ValueError('coordinates not in graph')
 
-        return [dict(self._adjacencies[coordinates][i]) \
-            for i in self._adjacencies[coordinates]]
+        neighbors = self._adjacencies[coordinates]
+
+        return [dict(neighbors[i]) for i in neighbors]
 
