@@ -1,3 +1,6 @@
+from collections import deque
+from queue import PriorityQueue
+
 class Graph:
     def __init__(self):
         self._adjacencies = {}
@@ -23,7 +26,65 @@ class Graph:
         if coordinates not in self._adjacencies:
             raise ValueError('coordinates not in graph')
 
-        neighbors = self._adjacencies[coordinates]
+        neighborList = self._adjacencies[coordinates]
 
-        return [dict(neighbors[i]) for i in neighbors]
+        return [dict(neighbor) for neighbor in neighborList]
+
+    def breadthFirst(self, startCoordinates, endCoordinates):
+        queue = deque()
+        visitedNodes = set()
+        parentMap = {}
+
+        queue.append(startCoordinates)
+        visitedNodes.add(startCoordinates)
+
+        while queue:
+            currentNode = queue.popleft()
+            if currentNode == endCoordinates:
+                return parentMap
+            
+            neighbors = self.getNeighbors(currentNode)
+
+            for neighbor in neighbors:
+                neighborNode = neighbor['node']
+
+                if neighborNode in visitedNodes:
+                    continue
+
+                visitedNodes.add(neighborNode)
+                parentMap[neighborNode] = currentNode
+                queue.append(neighborNode)
+
+        return None
+
+    def depthFirst(self, startCoordinates, endCoordinates):
+        stack = []
+        visitedNodes = set()
+        parentMap = {}
+
+        stack.append(startCoordinates)
+        visitedNodes.add(startCoordinates)
+
+        while stack:
+            currentNode = stack.pop()
+            if currentNode == endCoordinates:
+                return parentMap
+            
+            neighbors = self.getNeighbors(currentNode)
+
+            for neighbor in neighbors:
+                neighborNode = neighbor['node']
+
+                if neighborNode in visitedNodes:
+                    continue
+
+                visitedNodes.add(neighborNode)
+                parentMap[neighborNode] = currentNode
+                stack.append(neighborNode)
+
+        return None
+
+
+
+
 
