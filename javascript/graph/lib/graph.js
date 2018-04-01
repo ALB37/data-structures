@@ -10,7 +10,8 @@ module.exports = class Graph {
   }
 
   addEdge(startNode, endNode, weight = 0){
-    if (!this._adjacencyList.has(startNode) || !this._adjacencyList.has(endNode)){
+    if (!this._adjacencyList.has(startNode) 
+        || !this._adjacencyList.has(endNode)){
       throw new Error('__ERROR__ invalid nodes');
     }
     
