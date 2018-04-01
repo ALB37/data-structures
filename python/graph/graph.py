@@ -84,7 +84,45 @@ class Graph:
 
         return None
 
+    def dijkstraSearch(self, startCoordinates, endCoordinates):
+        visitedNodes = set()
+        parentMap = {}
+        shortestPath = {}
+        pQueue = PriorityQueue()
 
+        pQueue.put((0, startCoordinates))
 
+        shortestPath[startCoordinates] = 0
 
+        while pQueue.full():
+            currentNode = pQueue.get()[1]
 
+            if currentNode in visitedNodes:
+                continue
+
+            visitedNodes.add(currentNode)
+
+            if currentNode == endCoordinates:
+                return parentMap
+
+            neighbors = self.getNeighbors(currentNode)
+
+            for neighbor in neighbors:
+                node = neighbor['node']
+                weight = neighbor['weight']
+
+                if node in visitedNodes:
+                    continue
+
+                newPathWeight = shortestPath[currentNode] + weight
+
+                if node not in shortestPath \
+                    or newPathWeight < shortestPath[node]:
+                    shortestPath[node] = newPathWeight
+                    parentMap[node] = currentNode
+
+                    pQueue.set((shortestPath[node], node))
+
+        return None
+
+        
